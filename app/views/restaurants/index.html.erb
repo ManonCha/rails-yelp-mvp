@@ -1,11 +1,11 @@
-<h1>All the restaurants</h1>
+<div class="title">
+  <h1>All restaurants</h1>
+</div>
 
-<ul>
-    <% @restaurants.each do |resto| %>
-      <li><strong><%= resto.name %></strong>
-          <%= link_to "See details", restaurant_path(resto.id), class: "btn btn-primary" %>
-      </li>
-    <% end %>
-</ul>
-
-<%= link_to "Create new restaurant", new_restaurant_path, class: "btn btn-primary" %>
+<% @restaurants.each do |resto| %>
+<div class="restaurant-card">
+  <img src="https://picsum.photos/300">
+  <strong><%= resto.name %></strong>
+  <%= link_to "See details", restaurant_path(resto.id), class: "btn btn-primary" %>
+<% end %>
+</div>
